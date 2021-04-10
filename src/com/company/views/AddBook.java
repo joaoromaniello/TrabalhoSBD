@@ -16,7 +16,7 @@ public class AddBook extends  JFrame {
     private String autor;
     public int counter = 0;
     public Set <Book> livros = new HashSet<>();
-    private int offset = 70;
+    private int offset = 50;
     public final JFrame frame = new JFrame("Frame do livro");
     private final JTextField nomeLivro = new JTextField();
     private final JTextField idLivro = new JTextField();
@@ -27,6 +27,7 @@ public class AddBook extends  JFrame {
     private final JLabel autorLiv = new JLabel("Autor:");
     private final JButton addButton = new JButton("ADICIONAR");
     private final JButton backButton = new JButton("Voltar");
+    private final JButton listButton = new JButton("Listar ");
 
     public AddBook(){
         frame.setVisible(true);
@@ -37,7 +38,7 @@ public class AddBook extends  JFrame {
         frame.setLayout(null);
 
         label.setText("Informações do livro");
-        label.setBounds(140, 20, 180, 30);
+        label.setBounds(140, -40+offset, 180, 30);
         frame.add(label);
 
         nomeLiv.setText("Nome:");
@@ -63,28 +64,32 @@ public class AddBook extends  JFrame {
         frame.add(idLivro);
 
 
-        addButton.setBounds(120, 200+offset, 180, 30);
+        addButton.setBounds(112, +(5*offset), 160, 40);
         frame.add(addButton);
 
-        backButton.setBounds(10, 10, 90, 25);
+        backButton.setBounds(10, 10+(5*offset), 90, 25);
         frame.add(backButton);
+
+        listButton.setBounds(285, 10+(5*offset), 90, 25);
+        frame.add(listButton);
 
         setBackButton();
         setAddButton();
+        setListButton();
     }
 
 
     public void setAddButton() {
         addButton.addActionListener(event -> {
             try {
+
                 this.nome = nomeLivro.getText();
                 this.autor = autorLivro.getText();
                 this.id = Integer.parseInt(idLivro.getText());
 
-                System.out.println(nome );
-                System.out.println(autor);
-                System.out.println(id );
+                Book a = new Book(nome,autor,id,300);
 
+                livros.add(a);
 
 
 
@@ -98,6 +103,18 @@ public class AddBook extends  JFrame {
         backButton.addActionListener(event -> {
             try {
                 this.frame.dispose();
+
+            } catch (Exception exception) {
+                JOptionPane.showMessageDialog(this, exception.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+    }
+
+    public void setListButton() {
+        listButton.addActionListener(event -> {
+            try {
+               String liv =  livros.toString();
+                System.out.println(liv);
 
             } catch (Exception exception) {
                 JOptionPane.showMessageDialog(this, exception.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);

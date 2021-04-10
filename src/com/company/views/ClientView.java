@@ -9,7 +9,7 @@ import java.awt.*;
 public class ClientView extends JFrame {
 
     public int offset = 130;
-    public final  JFrame frame = new JFrame("Ambiente");
+    public final  JFrame frame = new JFrame("Ambiente do cliente");
     private final  JButton buyButton = new JButton("Comprar um livro");
     private final  JButton rentButton = new JButton("Alugar um livro");
     private final  JButton sellButton = new JButton("Vender um livro");
