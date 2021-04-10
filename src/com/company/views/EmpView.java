@@ -3,10 +3,11 @@ package com.company.views;
 import javax.swing.*;
 public class EmpView extends JFrame{
 
-    public int offset = 130;
+    public int offset = 160;
     public final JFrame frame2 = new JFrame("Ambiente do empregado");
     private final JButton removeButton = new JButton("Remover um livro");
     private final JButton addButton = new JButton("Adicionar um livro");
+    private final JButton backButton = new JButton("Voltar");
     private final JLabel label = new JLabel("O QUE VOCÊ DESEJA FAZER?");
 
 
@@ -28,9 +29,24 @@ public class EmpView extends JFrame{
         removeButton.setBounds(20, 260 - offset, 350, 50);
         frame2.add(removeButton);
 
+        backButton.setBounds(140, 250 , 110, 50);
+        frame2.add(backButton);
+
         setAddButton();
         setRemoveButton();
+        setBackButton();
 
+    }
+
+    public void setBackButton() {
+        backButton.addActionListener(event -> {
+            try {
+                frame2.dispose();
+
+            } catch (Exception exception) {
+                JOptionPane.showMessageDialog(this, exception.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        });
     }
 
     public void setAddButton() {

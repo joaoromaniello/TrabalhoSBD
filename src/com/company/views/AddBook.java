@@ -14,7 +14,7 @@ public class AddBook extends  JFrame {
     private final JLabel idLiv = new JLabel("Id");
     private final JLabel autorLiv = new JLabel("Autor:");
     private final JButton addButton = new JButton("ADICIONAR");
-
+    private final JButton backButton = new JButton("Voltar");
 
     public AddBook(){
         frame.setVisible(true);
@@ -54,6 +54,10 @@ public class AddBook extends  JFrame {
         addButton.setBounds(120, 200+offset, 180, 30);
         frame.add(addButton);
 
+        backButton.setBounds(10, 10, 90, 25);
+        frame.add(backButton);
+
+        setBackButton();
 
     }
 
@@ -62,6 +66,17 @@ public class AddBook extends  JFrame {
             try {
                 AddBook a = new AddBook();
                 a.frame.setVisible(true);
+
+            } catch (Exception exception) {
+                JOptionPane.showMessageDialog(this, exception.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+    }
+
+    public void setBackButton() {
+        backButton.addActionListener(event -> {
+            try {
+                this.frame.dispose();
 
             } catch (Exception exception) {
                 JOptionPane.showMessageDialog(this, exception.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
