@@ -1,3 +1,2 @@
 # ProjetoGBD
-# PROJETGBD
-# TrabalhoSBD
+
