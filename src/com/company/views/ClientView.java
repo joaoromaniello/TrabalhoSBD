@@ -16,6 +16,7 @@ public class ClientView extends JFrame {
     private final JButton removeButton = new JButton("Remover um livro");
     private final JButton addButton = new JButton("Adicionar um livro");
     private final JLabel label = new JLabel("O QUE VOCÊ DESEJA FAZER?");
+    private final JButton backButton = new JButton("Voltar");
 
 
     ClientView() {
@@ -40,7 +41,23 @@ public class ClientView extends JFrame {
         buyButton.setBounds(20, 200 - offset, 350, 50);
         frame.add(buyButton);
 
+        backButton.setBounds(140, 250 , 110, 50);
+        frame.add(backButton);
 
+        setBackButton();
+
+
+    }
+
+    public void setBackButton() {
+        backButton.addActionListener(event -> {
+            try {
+                this.frame.dispose();
+
+            } catch (Exception exception) {
+                JOptionPane.showMessageDialog(this, exception.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        });
     }
 
 

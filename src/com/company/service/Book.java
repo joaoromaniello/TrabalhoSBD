@@ -5,6 +5,7 @@ public class Book {
     private String name;
     private String autor;
     private Integer id;
+    private Integer qtd = 0;
 
 
 
@@ -13,7 +14,19 @@ public class Book {
         this.name = name;
         this.autor = autor;
         this.id = id;
+        this.qtd = this.qtd++;
 
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }

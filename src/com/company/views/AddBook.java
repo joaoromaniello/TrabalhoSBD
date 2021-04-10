@@ -1,9 +1,21 @@
 package com.company.views;
 
 import javax.swing.*;
+import com.company.service.Book;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.TreeSet;
+
+
+
+
 
 public class AddBook extends  JFrame {
-
+    private String nome ;
+    private int id ;
+    private String autor;
+    public int counter = 0;
+    public Set <Book> livros = new HashSet<>();
     private int offset = 70;
     public final JFrame frame = new JFrame("Frame do livro");
     private final JTextField nomeLivro = new JTextField();
@@ -25,7 +37,7 @@ public class AddBook extends  JFrame {
         frame.setLayout(null);
 
         label.setText("Informações do livro");
-        label.setBounds(125, 20, 180, 30);
+        label.setBounds(140, 20, 180, 30);
         frame.add(label);
 
         nomeLiv.setText("Nome:");
@@ -58,14 +70,23 @@ public class AddBook extends  JFrame {
         frame.add(backButton);
 
         setBackButton();
-
+        setAddButton();
     }
+
 
     public void setAddButton() {
         addButton.addActionListener(event -> {
             try {
-                AddBook a = new AddBook();
-                a.frame.setVisible(true);
+                this.nome = nomeLivro.getText();
+                this.autor = autorLivro.getText();
+                this.id = Integer.parseInt(idLivro.getText());
+
+                System.out.println(nome );
+                System.out.println(autor);
+                System.out.println(id );
+
+
+
 
             } catch (Exception exception) {
                 JOptionPane.showMessageDialog(this, exception.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
