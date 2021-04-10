@@ -2,7 +2,7 @@ package com.company.views;
 
 import javax.swing.*;
 
-public class AddBook {
+public class AddBook extends  JFrame {
 
     private int offset = 70;
     public final JFrame frame = new JFrame("Frame do livro");
@@ -13,13 +13,15 @@ public class AddBook {
     private final JLabel nomeLiv = new JLabel("Nome:");
     private final JLabel idLiv = new JLabel("Id");
     private final JLabel autorLiv = new JLabel("Autor:");
+    private final JButton addButton = new JButton("ADICIONAR");
 
 
     public AddBook(){
         frame.setVisible(true);
         frame.setResizable(false);
         frame.setSize(400, 355);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocation(900,300);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.setLayout(null);
 
         label.setText("Informações do livro");
@@ -49,6 +51,22 @@ public class AddBook {
         frame.add(idLivro);
 
 
+        addButton.setBounds(120, 200+offset, 180, 30);
+        frame.add(addButton);
+
+
+    }
+
+    public void setAddButton() {
+        addButton.addActionListener(event -> {
+            try {
+                AddBook a = new AddBook();
+                a.frame.setVisible(true);
+
+            } catch (Exception exception) {
+                JOptionPane.showMessageDialog(this, exception.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        });
     }
 
 }

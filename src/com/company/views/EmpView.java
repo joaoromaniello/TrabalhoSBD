@@ -4,7 +4,7 @@ import javax.swing.*;
 public class EmpView extends JFrame{
 
     public int offset = 130;
-    public final JFrame frame2 = new JFrame("Ambiente");
+    public final JFrame frame2 = new JFrame("Ambiente do empregado");
     private final JButton removeButton = new JButton("Remover um livro");
     private final JButton addButton = new JButton("Adicionar um livro");
     private final JLabel label = new JLabel("O QUE VOCÊ DESEJA FAZER?");
@@ -14,7 +14,8 @@ public class EmpView extends JFrame{
         frame2.setVisible(true);
         frame2.setResizable(false);
         frame2.setSize(400, 355);
-        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame2.setLocation(900,300);
+        frame2.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame2.setLayout(null);
 
         label.setText("O QUE VOCÊ DESEJA FAZER?");

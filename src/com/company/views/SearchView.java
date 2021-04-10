@@ -21,6 +21,7 @@ public class SearchView  extends  JFrame{
         frame.setVisible(true);
         frame.setResizable(false);
         frame.setSize(400, 355);
+        frame.setLocation(900,300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
 
