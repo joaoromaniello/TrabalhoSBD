@@ -2,8 +2,12 @@ package com.company.views;
 
 import javax.swing.*;
 
+import com.company.service.Book;
 import com.company.views.ClientView;
 import com.company.views.EmpView;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class SelectionView extends JFrame {
     private final  JFrame frame = new JFrame("Biblioteca virtual");

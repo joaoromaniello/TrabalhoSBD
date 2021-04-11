@@ -5,18 +5,20 @@ import com.company.service.Book;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.TreeSet;
-
+import com.company.views.SelectionView;
 
 
 
 
 public class AddBook extends  JFrame {
+
+
     private String nome ;
     private int id ;
     private String autor;
     public int counter = 0;
-    public Set <Book> livros = new HashSet<>();
     private int offset = 50;
+    public Set<Book> livros = new HashSet<>();
     public final JFrame frame = new JFrame("Frame do livro");
     private final JTextField nomeLivro = new JTextField();
     private final JTextField idLivro = new JTextField();
@@ -78,6 +80,12 @@ public class AddBook extends  JFrame {
         setListButton();
     }
 
+    public void addBook(Book a){
+
+        livros.add(a);
+
+    }
+
 
     public void setAddButton() {
         addButton.addActionListener(event -> {
@@ -89,7 +97,10 @@ public class AddBook extends  JFrame {
 
                 Book a = new Book(nome,autor,id,300);
 
-                livros.add(a);
+                addBook(a);
+
+
+                JOptionPane.showMessageDialog(this,"LIVRO ADICIONADO COM SUCESSO!");
 
 
 
