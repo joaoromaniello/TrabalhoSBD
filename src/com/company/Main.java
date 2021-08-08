@@ -1,15 +1,13 @@
 package com.company;
 
-import com.company.views.AddBook;
-import com.company.views.SelectionView;
-import com.company.views.AddBook;
+
+import com.company.data.DataBase;
+import com.company.views.BookView;
+
 
 public class Main {
-
     public static void main(String[] args) {
-
-
-        SelectionView c = new SelectionView();
-        //AddBook a = new AddBook();
+        DataBase newDataBase = new DataBase();
+        new BookView(newDataBase);
     }
 }
